@@ -27,7 +27,7 @@ def execute_cell():
     # _copy_to_clipboard(cell)
     # _slimesend("%paste -q")
 
-    lines = vim.current.buffer[start_row-1:end_rowu
+    lines = vim.current.buffer[start_row-1:end_row]
     lines = [ line for line in lines if line.strip()!='' and line.strip()[0]!='#' ]
     cell = "\n".join(lines)
     _copy_to_clipboard(cell)
