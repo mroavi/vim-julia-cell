@@ -1,4 +1,4 @@
-" File:         ipython-cell.vim
+" File:         julia-cell.vim
 " Description:  Execute Python code cells in IPython directly from Vim.
 " Author:       Hans Chen <contact@hanschen.org>
 
@@ -36,44 +36,44 @@ import vim
 plugin_root_dir = vim.eval('s:plugin_root_dir')
 python_root_dir = normpath(join(plugin_root_dir, '..', 'python'))
 sys.path.insert(0, python_root_dir)
-import ipython_cell
+import julia_cell
 EOF
 
 function! IPythonCellClear()
-    exec s:python_command "ipython_cell.clear()"
+    exec s:python_command "julia_cell.clear()"
 endfunction
 
 function! IPythonCellClose()
-    exec s:python_command "ipython_cell.close_all()"
+    exec s:python_command "julia_cell.close_all()"
 endfunction
 
 function! IPythonCellExecuteCell(...)
     let arg1 = get(a:, 1, 0)
     let arg2 = get(a:, 2, 0)
-    exec s:python_command "ipython_cell.execute_cell()"
+    exec s:python_command "julia_cell.execute_cell()"
     if arg2
-        exec s:python_command "ipython_cell.jump_next_cell()"
+        exec s:python_command "julia_cell.jump_next_cell()"
     endif
 endfunction
 
 function! IPythonCellNextCell()
-    exec s:python_command "ipython_cell.jump_next_cell()"
+    exec s:python_command "julia_cell.jump_next_cell()"
 endfunction
 
 function! IPythonCellPrevCell()
-    exec s:python_command "ipython_cell.jump_prev_cell()"
+    exec s:python_command "julia_cell.jump_prev_cell()"
 endfunction
 
 function! IPythonCellPrevCommand()
-    exec s:python_command "ipython_cell.previous_command()"
+    exec s:python_command "julia_cell.previous_command()"
 endfunction
 
 function! IPythonCellRestart()
-    exec s:python_command "ipython_cell.restart_ipython()"
+    exec s:python_command "julia_cell.restart_ipython()"
 endfunction
 
 function! IPythonCellRun(...)
-    exec s:python_command "ipython_cell.run('" . join(a:000, ',') . "')"
+    exec s:python_command "julia_cell.run('" . join(a:000, ',') . "')"
 endfunction
 
 command! -nargs=0 IPythonCellClear call IPythonCellClear()
