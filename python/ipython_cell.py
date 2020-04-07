@@ -22,11 +22,6 @@ def execute_cell():
     if end_row is None:
         end_row = len(vim.current.buffer)
 
-    # start_row and end_row are 1-indexed, need to subtract 1
-    # cell = "\n".join(vim.current.buffer[start_row-1:end_row])
-    # _copy_to_clipboard(cell)
-    # _slimesend("%paste -q")
-
     lines = vim.current.buffer[start_row-1:end_row]
     lines = [ line for line in lines if line.strip()!='' and line.strip()[0]!='#' ]
     cell = "\n".join(lines)
