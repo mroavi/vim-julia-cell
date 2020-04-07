@@ -3,10 +3,10 @@
 " Author:       Hans Chen <contact@hanschen.org>
 " Author:       Martin Roa Villescas
 
-if exists('g:loaded_ipython_cell')
+if exists('g:loaded_julia_cell')
     finish
 endif
-let g:loaded_ipython_cell = 1
+let g:loaded_julia_cell = 1
 
 if !has("python") && !has("python3")
     echo 'ipython-cell requires py >= 2.7 or py3'
