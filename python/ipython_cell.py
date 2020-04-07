@@ -27,13 +27,12 @@ def execute_cell():
     # _copy_to_clipboard(cell)
     # _slimesend("%paste -q")
 
-#     lines = vim.current.buffer[start_row-1:end_row]
-#     lines = [ line for line in lines if line.strip()!='' and line.strip()[0]!='#' ]
-#     cell = "\n".join(lines)
+    lines = vim.current.buffer[start_row-1:end_rowu
+    lines = [ line for line in lines if line.strip()!='' and line.strip()[0]!='#' ]
+    cell = "\n".join(lines)
+    _copy_to_clipboard(cell)
 
-#     _slimesend(cell)
-
-    print("Test")
+    _slimesend("include_string(Main, clipboard())")
 
 def jump_next_cell():
     """Move cursor to the start of the next cell."""
