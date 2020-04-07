@@ -1,7 +1,7 @@
-*ipython-cell.txt*  run code cells in IPython
+*ipython-cell.txt*  run code cells in Julia
 *ipython-cell*
 
-This plugin allows you to easily run Python code from Vim in IPython,
+This plugin allows you to easily run Python code from Vim in Julia,
 including individual code cells similar to Jupyter notebooks and MATLAB.
 
 ==============================================================================
@@ -13,26 +13,26 @@ ipython-cell does not add any custom mappings. Instead, it is up to the user
 to define custom mappings for the commands below. For example, you can add the
 following to your .vimrc: >
 
-    nmap <Leader>r :IPythonCellRun<CR>
-    nmap <Leader>R :IPythonCellRunTime<CR>
-    nmap <Leader>c :IPythonCellExecuteCell<CR>
-    nmap <Leader>C :IPythonCellExecuteCellJump<CR>
-    nmap <Leader>l :IPythonCellClear<CR>
-    nmap <Leader>x :IPythonCellClose<CR>
-    nmap <Leader>p :IPythonCellPrevCommand<CR>
-    nmap <Leader>q :IPythonCellRestart<CR>
+    nmap <Leader>r :JuliaCellRun<CR>
+    nmap <Leader>R :JuliaCellRunTime<CR>
+    nmap <Leader>c :JuliaCellExecuteCell<CR>
+    nmap <Leader>C :JuliaCellExecuteCellJump<CR>
+    nmap <Leader>l :JuliaCellClear<CR>
+    nmap <Leader>x :JuliaCellClose<CR>
+    nmap <Leader>p :JuliaCellPrevCommand<CR>
+    nmap <Leader>q :JuliaCellRestart<CR>
 
 `<Leader>` is `\` (backslash) by default. The mappings above map `\r` to run
-the current script in IPython, `\R` to run and time the script, `\c` to
+the current script in Julia, `\R` to run and time the script, `\c` to
 execute only the current code cell, `\C` to execute the current code cell and
-jump to the next cell, `\l` to clear the IPython screen, and `\x` to close all
+jump to the next cell, `\l` to clear the Julia screen, and `\x` to close all
 Matplotlib figure windows.
 
 You may also want to add something like the following to easily navigate
 between code cells: >
 
-    nmap [c :IPythonCellPrevCell<CR>
-    nmap ]c :IPythonCellNextCell<CR>
+    nmap [c :JuliaCellPrevCell<CR>
+    nmap ]c :JuliaCellNextCell<CR>
 
 Code cells are by default defined by Vim marks (see |mark|). It is also
 possible to use special text in the code (referred to as tags) to mark the
@@ -49,48 +49,48 @@ You may want to avoid using this feature if your code contains sensitive data.
 ==============================================================================
 COMMANDS                                               *ipython-cell-commands*
 
-                                                             *:IPythonCellRun*
-:IPythonCellRun                     Run whole script in IPython.
+                                                             *:JuliaCellRun*
+:JuliaCellRun                     Run whole script in Julia.
 
-                                                         *:IPythonCellRunTime*
-:IPythonCellRunTime                 Run whole script in IPython and time the
+                                                         *:JuliaCellRunTime*
+:JuliaCellRunTime                 Run whole script in Julia and time the
                                     execution.
 
-                                                     *:IPythonCellExecuteCell*
-:IPythonCellExecuteCell             Execute a single code cell in IPython.
+                                                     *:JuliaCellExecuteCell*
+:JuliaCellExecuteCell             Execute a single code cell in Julia.
 
-                                                 *:IPythonCellExecuteCellJump*
-:IPythonCellExecuteCellJump         Execute a single code cell in IPython, and
+                                                 *:JuliaCellExecuteCellJump*
+:JuliaCellExecuteCellJump         Execute a single code cell in Julia, and
                                     move cursor to the next cell.
 
-                                              *:IPythonCellExecuteCellVerbose*
-:IPythonCellExecuteCellVerbose      Print and execute a single code cell in
-                                    IPython.
+                                              *:JuliaCellExecuteCellVerbose*
+:JuliaCellExecuteCellVerbose      Print and execute a single code cell in
+                                    Julia.
 
-                                          *:IPythonCellExecuteCellVerboseJump*
-:IPythonCellExecuteCellVerboseJump  Print and execute a single code cell in
-                                    IPython, and move cursor to the next cell.
+                                          *:JuliaCellExecuteCellVerboseJump*
+:JuliaCellExecuteCellVerboseJump  Print and execute a single code cell in
+                                    Julia, and move cursor to the next cell.
 
-                                                           *:IPythonCellClear*
-:IPythonCellClear                   Clear IPython screen.
+                                                           *:JuliaCellClear*
+:JuliaCellClear                   Clear Julia screen.
 
-                                                           *:IPythonCellClose*
-:IPythonCellClose                   Close all Matplotlib figure windows. This
+                                                           *:JuliaCellClose*
+:JuliaCellClose                   Close all Matplotlib figure windows. This
                                     command assumes that the
                                     `matplotlib.pyplot` module is imported as
-                                    `plt` in IPython.
+                                    `plt` in Julia.
 
-:IPythonCellPrevCell                                    *:IPythonCellPrevCell*
+:JuliaCellPrevCell                                    *:JuliaCellPrevCell*
                                     Jump to the previous cell header.
 
-:IPythonCellNextCell                                    *:IPythonCellNextCell*
+:JuliaCellNextCell                                    *:JuliaCellNextCell*
                                     Jump to the next cell header.
 
-:IPythonCellPrevCommand                              *:IPythonCellPrevCommand*
+:JuliaCellPrevCommand                              *:JuliaCellPrevCommand*
                                     Run previous command.
 
-:IPythonCellRestart                                      *:IPythonCellRestart*
-                                    Restart IPython.
+:JuliaCellRestart                                      *:JuliaCellRestart*
+                                    Restart Julia.
 
 ==============================================================================
 CONFIGURATION                                     *ipython-cell-configuration*
@@ -118,16 +118,16 @@ g:julia_cell_tag                  What kind of comment tag to use to mark
 ==============================================================================
 FAQ                                                         *ipython-cell-faq*
 
-Q: The 'IPythonCellExecuteCell' and 'IPythonCellExecuteCellJump' commands ~
-do not work, but other commands such as IPythonCellRun work. Why? ~
+Q: The 'JuliaCellExecuteCell' and 'JuliaCellExecuteCellJump' commands ~
+do not work, but other commands such as JuliaCellRun work. Why? ~
 A: First, make sure you have Tkinter installed (otherwise you will get an
 error message) and a supported clipboard program, see README.
 Also make sure your `DISPLAY` variable is correct, see next question.
 If you cannot install the requirements but still want to use the cell execution
-feature, you can try the verbose versions 'IPythonCellExecuteCellVerbose' and
-'IPythonCellExecuteCellVerboseJump'.
+feature, you can try the verbose versions 'JuliaCellExecuteCellVerbose' and
+'JuliaCellExecuteCellVerboseJump'.
 
-Q: 'IPythonCellExecuteCell' and 'IPythonCellExecuteCellJump' do not execute ~
+Q: 'JuliaCellExecuteCell' and 'JuliaCellExecuteCellJump' do not execute ~
 the correct code cell, or I get an error about 'can't open display', ~
 'could not open display', 'could not connect to display', or something ~
 similar, what do I do? ~
@@ -150,27 +150,27 @@ Q: How do I show the marks in the left-most column? ~
 A: Use the vim-signature plugin:
     https://github.com/kshenoy/vim-signature
 
-Q: How to send only the current line or selected lines to IPython? ~
+Q: How to send only the current line or selected lines to Julia? ~
 A: Use the features provided by vim-slime. The default mapping `C-c C-c` (hold
 down Ctrl and tap the C key twice) will send the current paragraph or the
-selected lines to IPython. See |slime| for more information.
+selected lines to Julia. See |slime| for more information.
 
 Q: Why do I get "name 'plt' is not defined" when I try to close figures? ~
 A: ipython-cell assumes that you have imported `matplotlib.pyplot` as `plt` in
-IPython. If you prefer to import `matplotlib.pyplot` differently, you can
+Julia. If you prefer to import `matplotlib.pyplot` differently, you can
 achieve the same thing using vim-slime, for example by adding the following to
 your .vimrc: >
 
     nmap <Leader>x :SlimeSend1 matplotlib.pyplot.close('all')<CR>
 
-Q: How can I send other commands to IPython, e.g. '%who'? ~
-A: You can easily send arbitary commands to IPython using the `:SlimeSend1`
+Q: How can I send other commands to Julia, e.g. '%who'? ~
+A: You can easily send arbitary commands to Julia using the `:SlimeSend1`
 command provided by vim-slime, e.g. `:SlimeSend1 %who`, and map these commands
 to key combinations.
 
 Q: Why isn't this plugin specific to Python by default? In other words, why ~
 do I have to add all this extra stuff to make this plugin Python-specific? ~
-A: This plugin was created with Python and IPython in mind, but I don't want
+A: This plugin was created with Python and Julia in mind, but I don't want
 to restrict the plugin to Python by design. Instead, I have included examples
 of how to use plugin managers to specify that the plugin should be loaded only
 for Python files and how to create Python-specific mappings. If someone wants

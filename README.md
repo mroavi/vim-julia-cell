@@ -1,7 +1,7 @@
 ipython-cell
 ============
 
-Seamlessly run Python code from Vim in IPython, including executing individual
+Seamlessly run Python code from Vim in Julia, including executing individual
 code cells similar to Jupyter notebooks and MATLAB.
 
 ipython-cell is especially suited for data exploration and visualization using
@@ -24,7 +24,7 @@ ipython-cell requires Vim or Neovim to be compiled with Python 2 or Python 3
 support (`+python` or `+python3` when running `vim --version`). If both Python
 versions are found, the plugin will prefer Python 3.
 
-ipython-cell depends on [vim-slime] to send the code to IPython, see
+ipython-cell depends on [vim-slime] to send the code to Julia, see
 [Installation](#installation) instructions below.
 
 Additionally, the cell execution feature requires Tkinter and a
@@ -97,8 +97,8 @@ git clone https://github.com/hanschen/vim-ipython-cell.git
 Usage
 -----
 
-ipython-cell sends code from Vim to IPython using [vim-slime]. For this to
-work, IPython has to be running in a terminal multiplexer like GNU Screen or
+ipython-cell sends code from Vim to Julia using [vim-slime]. For this to
+work, Julia has to be running in a terminal multiplexer like GNU Screen or
 tmux, or in a Vim or Neovim terminal. I personally use tmux, but you will find
 `screen` installed on most *nix systems.
 
@@ -117,59 +117,59 @@ You may want to avoid using this feature if your code contains sensitive data.
 
 ### Commands
 
-    :IPythonCellExecuteCell
+    :JuliaCellExecuteCell
 
-Execute the current code cell in IPython.
+Execute the current code cell in Julia.
 Requires a [clipboard program](#supported-clipboard-programs)
 
-    :IPythonCellExecuteCellJump
+    :JuliaCellExecuteCellJump
 
-Execute the current code cell in IPython, and jump to the next cell.
+Execute the current code cell in Julia, and jump to the next cell.
 Requires a [clipboard program](#supported-clipboard-programs)
 
-    :IPythonCellExecuteCellVerbose
+    :JuliaCellExecuteCellVerbose
 
-Print and execute the current code cell in IPython.
-Verbose version of `IPythonCellExecuteCell` that works without a clipboard
+Print and execute the current code cell in Julia.
+Verbose version of `JuliaCellExecuteCell` that works without a clipboard
 program.
 
-    :IPythonCellExecuteCellVerboseJump
+    :JuliaCellExecuteCellVerboseJump
 
-Print and execute the current code cell in IPython, and jump to the next cell.
-Verbose version of `IPythonCellExecuteCellJump` that works without a clipboard
+Print and execute the current code cell in Julia, and jump to the next cell.
+Verbose version of `JuliaCellExecuteCellJump` that works without a clipboard
 program.
 
-    :IPythonCellRun
+    :JuliaCellRun
 
-Run the whole script in IPython.
+Run the whole script in Julia.
 
-    :IPythonCellRunTime
+    :JuliaCellRunTime
 
-Run the whole script in IPython and time the execution.
+Run the whole script in Julia and time the execution.
 
-    :IPythonCellClear
+    :JuliaCellClear
 
-Clear IPython screen.
+Clear Julia screen.
 
-    :IPythonCellClose
+    :JuliaCellClose
 
 Close all figure windows.
 
-    :IPythonCellPrevCell
+    :JuliaCellPrevCell
 
 Jump to the previous cell header.
 
-    :IPythonCellNextCell
+    :JuliaCellNextCell
 
 Jump to the next cell header.
 
-    :IPythonCellPrevCommand
+    :JuliaCellPrevCommand
 
 Run previous command.
 
-    :IPythonCellRestart
+    :JuliaCellRestart
 
-Restart IPython.
+Restart Julia.
 
 [vim-slime]: https://github.com/jpalardy/vim-slime
 
@@ -209,12 +209,12 @@ d | total = numbers.sum()           | cell 5
 ~~~
 
 Note that code cells can be defined inside statements such as `for` loops.
-IPython's `%paste` will automatically dedent the code before execution.
+Julia's `%paste` will automatically dedent the code before execution.
 However, if the code cell is defined inside e.g. a `for` loop, the code cell
 *will not* iterate over the loop.
 
 In the example above, executing cell 4 after cell 3 will only print `Odd` once
-because IPython will execute the following code:
+because Julia will execute the following code:
 
 ~~~python
 for n in numbers:
@@ -329,36 +329,36 @@ let g:julia_cell_delimit_cells_by = 'tags'
 " Keyboard mappings. <Leader> is \ (backslash) by default
 
 " map <Leader>r to run script
-nnoremap <Leader>r :IPythonCellRun<CR>
+nnoremap <Leader>r :JuliaCellRun<CR>
 
 " map <Leader>R to run script and time the execution
-nnoremap <Leader>R :IPythonCellRunTime<CR>
+nnoremap <Leader>R :JuliaCellRunTime<CR>
 
 " map <Leader>c to execute the current cell
-nnoremap <Leader>c :IPythonCellExecuteCell<CR>
+nnoremap <Leader>c :JuliaCellExecuteCell<CR>
 
 " map <Leader>C to execute the current cell and jump to the next cell
-nnoremap <Leader>C :IPythonCellExecuteCellJump<CR>
+nnoremap <Leader>C :JuliaCellExecuteCellJump<CR>
 
-" map <Leader>l to clear IPython screen
-nnoremap <Leader>l :IPythonCellClear<CR>
+" map <Leader>l to clear Julia screen
+nnoremap <Leader>l :JuliaCellClear<CR>
 
 " map <Leader>x to close all Matplotlib figure windows
-nnoremap <Leader>x :IPythonCellClose<CR>
+nnoremap <Leader>x :JuliaCellClose<CR>
 
 " map [c and ]c to jump to the previous and next cell header
-nnoremap [c :IPythonCellPrevCell<CR>
-nnoremap ]c :IPythonCellNextCell<CR>
+nnoremap [c :JuliaCellPrevCell<CR>
+nnoremap ]c :JuliaCellNextCell<CR>
 
-" map <Leader>h to send the current line or current selection to IPython
+" map <Leader>h to send the current line or current selection to Julia
 nmap <Leader>h <Plug>SlimeLineSend
 xmap <Leader>h <Plug>SlimeRegionSend
 
 " map <Leader>p to run the previous command
-nnoremap <Leader>p :IPythonCellPrevCommand<CR>
+nnoremap <Leader>p :JuliaCellPrevCommand<CR>
 
 " map <Leader>q to restart ipython
-nnoremap <Leader>q :IPythonCellRestart<CR>
+nnoremap <Leader>q :JuliaCellRestart<CR>
 
 ~~~
 
@@ -376,16 +376,16 @@ current cell, and F7 to execute the current cell and jump to the next cell:
 
 ~~~vim
 " map <F5> to save and run script
-nnoremap <F5> :w<CR>:IPythonCellRun<CR>
-inoremap <F5> <C-o>:w<CR><C-o>:IPythonCellRun<CR>
+nnoremap <F5> :w<CR>:JuliaCellRun<CR>
+inoremap <F5> <C-o>:w<CR><C-o>:JuliaCellRun<CR>
 
 " map <F6> to evaluate current cell without saving
-nnoremap <F6> :IPythonCellExecuteCell<CR>
-inoremap <F6> <C-o>:IPythonCellExecuteCell<CR>
+nnoremap <F6> :JuliaCellExecuteCell<CR>
+inoremap <F6> <C-o>:JuliaCellExecuteCell<CR>
 
 " map <F7> to evaluate current cell and jump to next cell without saving
-nnoremap <F7> :IPythonCellExecuteCellJump<CR>
-inoremap <F7> <C-o>:IPythonCellExecuteCellJump<CR>
+nnoremap <F7> :JuliaCellExecuteCellJump<CR>
+inoremap <F7> <C-o>:JuliaCellExecuteCellJump<CR>
 
 ~~~
 
@@ -406,17 +406,17 @@ Some features of ipython-cell use one of the following clipboard programs:
 FAQ
 ---
 
-> The `IPythonCellExecuteCell` and `IPythonCellExecuteCellJump` commands do
-> not work, but other commands such as IPythonCellRun work. Why?
+> The `JuliaCellExecuteCell` and `JuliaCellExecuteCellJump` commands do
+> not work, but other commands such as JuliaCellRun work. Why?
 
 First, make sure you have Tkinter installed (otherwise you will get an error
 message) and a supported [clipboard program](#supported-clipboard-programs).
 Also make sure your `DISPLAY` variable is correct, see next question.
 If you cannot install the requirements but still want to use the cell execution
-feature, you can try the verbose versions `IPythonCellExecuteCellVerbose` and
-`IPythonCellExecuteCellVerboseJump`.
+feature, you can try the verbose versions `JuliaCellExecuteCellVerbose` and
+`JuliaCellExecuteCellVerboseJump`.
 
-> `IPythonCellExecuteCell` and `IPythonCellExecuteCellJump` do not execute the
+> `JuliaCellExecuteCell` and `JuliaCellExecuteCellJump` do not execute the
 > correct code cell, or I get an error about
 > 'can't open display',
 > 'could not open display',
@@ -443,27 +443,27 @@ version control.
 
 Use the vim-signature plugin: https://github.com/kshenoy/vim-signature
 
-> How to send only the current line or selected lines to IPython?
+> How to send only the current line or selected lines to Julia?
 
 Use the features provided by vim-slime, see the
 [Example Vim Configuration](#example-vim-configuration) for an example.
 The default mapping `C-c C-c` (hold down Ctrl and tap the C key twice) will
-send the current paragraph or the selected lines to IPython. See `:help slime`
+send the current paragraph or the selected lines to Julia. See `:help slime`
 for more information, in particular the documentation about
 `<Plug>SlimeRegionSend` and `<Plug>SlimeLineSend`.
 
 > Why do I get "name 'plt' is not defined" when I try to close figures?
 
 ipython-cell assumes that you have imported `matplotlib.pyplot` as `plt` in
-IPython. If you prefer to import `matplotlib.pyplot` differently, you can
+Julia. If you prefer to import `matplotlib.pyplot` differently, you can
 achieve the same thing using vim-slime, for example by adding the following to
 your .vimrc:
 
     nnoremap <Leader>x :SlimeSend1 matplotlib.pyplot.close('all')<CR>
 
-> How can I send other commands to IPython, e.g. '%who'?
+> How can I send other commands to Julia, e.g. '%who'?
 
-You can easily send arbitary commands to IPython using the `:SlimeSend1`
+You can easily send arbitary commands to Julia using the `:SlimeSend1`
 command provided by vim-slime, e.g. `:SlimeSend1 %who`, and map these commands
 to key combinations.
 
@@ -476,7 +476,7 @@ If you use Neovim, make sure you have the [neovim] Python package installed.
 > Why isn't this plugin specific to Python by default? In other words, why do
 > I have to add all this extra stuff to make this plugin Python-specific?
 
-This plugin was created with Python and IPython in mind, but I don't want to
+This plugin was created with Python and Julia in mind, but I don't want to
 restrict the plugin to Python by design. Instead, I have included examples of
 how to use plugin managers to specify that the plugin should be loaded only
 for Python files and how to create Python-specific mappings. If someone wants
@@ -493,10 +493,10 @@ Related plugins
 ---------------
 
 * [tslime\_ipython] - Similar to ipython-cell but with some small differences.
-  For example, tslime\_ipython pastes the whole code that's sent to IPython
-  to the input line, while ipython-cell uses IPython's `%paste -q` command to
+  For example, tslime\_ipython pastes the whole code that's sent to Julia
+  to the input line, while ipython-cell uses Julia's `%paste -q` command to
   make the execution less verbose.
-* [vim-ipython] - Advanced two-way integration between Vim and IPython. I never
+* [vim-ipython] - Advanced two-way integration between Vim and Julia. I never
   got it to work as I want, i.e., don't show the code that's executed but show
   the output from the code, which is why I created this simpler plugin.
 * [vim-tmux-navigator] - Seamless navigation between Vim splits and tmux panes.

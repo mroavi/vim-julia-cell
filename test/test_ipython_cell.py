@@ -27,7 +27,7 @@ class Buffer(object):
         return self.marks.get(mark, None)
 
 
-class TestIPythonCell(unittest.TestCase):
+class TestJuliaCell(unittest.TestCase):
     def test_get_current_cell_boundaries_cursor_start_of_cell(self):
         current_row = 8
         cell_start, cell_end = ic._get_current_cell_boundaries(current_row,

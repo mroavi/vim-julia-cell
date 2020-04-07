@@ -9,7 +9,7 @@ endif
 let g:loaded_julia_cell = 1
 
 if !has("python") && !has("python3")
-    echo 'ipython-cell requires py >= 2.7 or py3'
+    echo 'julia-cell requires py >= 2.7 or py3'
     finish
 endif
 
@@ -40,15 +40,15 @@ sys.path.insert(0, python_root_dir)
 import julia_cell
 EOF
 
-function! IPythonCellClear()
+function! JuliaCellClear()
     exec s:python_command "julia_cell.clear()"
 endfunction
 
-function! IPythonCellClose()
+function! JuliaCellClose()
     exec s:python_command "julia_cell.close_all()"
 endfunction
 
-function! IPythonCellExecuteCell(...)
+function! JuliaCellExecuteCell(...)
     let arg1 = get(a:, 1, 0)
     let arg2 = get(a:, 2, 0)
     exec s:python_command "julia_cell.execute_cell()"
@@ -57,35 +57,35 @@ function! IPythonCellExecuteCell(...)
     endif
 endfunction
 
-function! IPythonCellNextCell()
+function! JuliaCellNextCell()
     exec s:python_command "julia_cell.jump_next_cell()"
 endfunction
 
-function! IPythonCellPrevCell()
+function! JuliaCellPrevCell()
     exec s:python_command "julia_cell.jump_prev_cell()"
 endfunction
 
-function! IPythonCellPrevCommand()
+function! JuliaCellPrevCommand()
     exec s:python_command "julia_cell.previous_command()"
 endfunction
 
-function! IPythonCellRestart()
+function! JuliaCellRestart()
     exec s:python_command "julia_cell.restart_ipython()"
 endfunction
 
-function! IPythonCellRun(...)
+function! JuliaCellRun(...)
     exec s:python_command "julia_cell.run('" . join(a:000, ',') . "')"
 endfunction
 
-command! -nargs=0 IPythonCellClear call IPythonCellClear()
-command! -nargs=0 IPythonCellClose call IPythonCellClose()
-command! -nargs=0 IPythonCellExecuteCell call IPythonCellExecuteCell()
-command! -nargs=0 IPythonCellExecuteCellJump call IPythonCellExecuteCell(1, 1)
-command! -nargs=0 IPythonCellExecuteCellVerbose call IPythonCellExecuteCell(1)
-command! -nargs=0 IPythonCellExecuteCellVerboseJump call IPythonCellExecuteCell(1, 1)
-command! -nargs=0 IPythonCellNextCell call IPythonCellNextCell()
-command! -nargs=0 IPythonCellPrevCell call IPythonCellPrevCell()
-command! -nargs=0 IPythonCellPrevCommand call IPythonCellPrevCommand()
-command! -nargs=0 IPythonCellRestart call IPythonCellRestart()
-command! -nargs=0 IPythonCellRun call IPythonCellRun()
-command! -nargs=0 IPythonCellRunTime call IPythonCellRun('-t')
+command! -nargs=0 JuliaCellClear call JuliaCellClear()
+command! -nargs=0 JuliaCellClose call JuliaCellClose()
+command! -nargs=0 JuliaCellExecuteCell call JuliaCellExecuteCell()
+command! -nargs=0 JuliaCellExecuteCellJump call JuliaCellExecuteCell(1, 1)
+command! -nargs=0 JuliaCellExecuteCellVerbose call JuliaCellExecuteCell(1)
+command! -nargs=0 JuliaCellExecuteCellVerboseJump call JuliaCellExecuteCell(1, 1)
+command! -nargs=0 JuliaCellNextCell call JuliaCellNextCell()
+command! -nargs=0 JuliaCellPrevCell call JuliaCellPrevCell()
+command! -nargs=0 JuliaCellPrevCommand call JuliaCellPrevCommand()
+command! -nargs=0 JuliaCellRestart call JuliaCellRestart()
+command! -nargs=0 JuliaCellRun call JuliaCellRun()
+command! -nargs=0 JuliaCellRunTime call JuliaCellRun('-t')
