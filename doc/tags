@@ -19,4 +19,4 @@ ipython-cell-tag	ipython-cell.txt	/*ipython-cell-tag*
 ipython-cell-usage	ipython-cell.txt	/*ipython-cell-usage*
 ipython-cell-valid-marks	ipython-cell.txt	/*ipython-cell-valid-marks*
 ipython-cell.txt	ipython-cell.txt	/*ipython-cell.txt*
-ipython_cell_delimit_cells_by	ipython-cell.txt	/*ipython_cell_delimit_cells_by*
+julia_cell_delimit_cells_by	ipython-cell.txt	/*julia_cell_delimit_cells_by*

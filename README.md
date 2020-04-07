@@ -178,7 +178,7 @@ Defining code cells
 -------------------
 
 Code cells are defined by either Vim marks or special text in the code,
-depending on if `g:ipython_cell_delimit_cells_by` is set to `'marks'` or
+depending on if `g:julia_cell_delimit_cells_by` is set to `'marks'` or
 `'tags'`, respectively. The default is to use Vim marks (see `:help mark` in
 Vim).
 
@@ -276,17 +276,17 @@ See note in the previous section about defining code cells inside statements
 Configuration
 -------------
 
-    g:ipython_cell_delimit_cells_by
+    g:julia_cell_delimit_cells_by
 
 Specify if cells should be delimited by `'marks'` or `'tags'`.
 Default: `'marks'`
 
-    g:ipython_cell_tag
+    g:julia_cell_tag
 
 If cells are delimited by tags, specify the format of the tags.
 Default: `'##'`
 
-    g:ipython_cell_valid_marks
+    g:julia_cell_valid_marks
 
 If cells are delimited by marks, specify which marks to use.
 Default: `'abcdefghijklmnopqrstuvqxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'`
@@ -324,7 +324,7 @@ let g:slime_dont_ask_default = 1
 " ipython-cell configuration
 "------------------------------------------------------------------------------
 " Use '##' to define cells instead of using marks
-let g:ipython_cell_delimit_cells_by = 'tags'
+let g:julia_cell_delimit_cells_by = 'tags'
 
 " Keyboard mappings. <Leader> is \ (backslash) by default
 

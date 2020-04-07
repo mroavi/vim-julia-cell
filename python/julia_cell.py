@@ -7,7 +7,7 @@ import re
 try:
     import vim
 except ImportError:
-    print("warning: importing ipython_cell outside vim, some functions will "
+    print("warning: importing julia_cell outside vim, some functions will "
           "not work")
 
 
@@ -124,16 +124,16 @@ def _error(*args, **kwargs):
 def _get_cell_boundaries():
     """Return a list of rows (1-indexed) for all cell boundaries."""
     buffer = vim.current.buffer
-    delimiter = vim.eval('g:ipython_cell_delimit_cells_by').strip()
+    delimiter = vim.eval('g:julia_cell_delimit_cells_by').strip()
 
     if delimiter == 'marks':
-        valid_marks = vim.eval('g:ipython_cell_valid_marks').strip()
+        valid_marks = vim.eval('g:julia_cell_valid_marks').strip()
         cell_boundaries = _get_rows_with_marks(buffer, valid_marks)
     elif delimiter == 'tags':
-        tag = vim.eval('g:ipython_cell_tag')
+        tag = vim.eval('g:julia_cell_tag')
         cell_boundaries = _get_rows_with_tag(buffer, tag)
     else:
-        _error("Invalid option value for g:ipython_cell_valid_marks: {}"
+        _error("Invalid option value for g:julia_cell_valid_marks: {}"
                .format(delimiter))
         return
 
