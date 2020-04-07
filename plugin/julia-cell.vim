@@ -1,6 +1,7 @@
 " File:         julia-cell.vim
-" Description:  Execute Python code cells in IPython directly from Vim.
+" Description:  Execute Julia code cells in a REPL inside a tmux pane directly from Vim.
 " Author:       Hans Chen <contact@hanschen.org>
+" Author:       Martin Roa Villescas
 
 if exists('g:loaded_ipython_cell')
     finish
