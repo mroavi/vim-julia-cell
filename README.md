@@ -1,10 +1,10 @@
-ipython-cell
+julia-cell
 ============
 
 Seamlessly run Python code from Vim in Julia, including executing individual
 code cells similar to Jupyter notebooks and MATLAB.
 
-ipython-cell is especially suited for data exploration and visualization using
+julia-cell is especially suited for data exploration and visualization using
 Python. You can for example define a code cell that loads your input data, and
 another code cell to visualize the data. This plugin allows you to change and
 re-run the visualization part of your code without having to reload the data
@@ -14,17 +14,17 @@ each time.
 Demo
 ----
 
-![Demo animation](../assets/ipython-cell-demo.gif?raw=true)
+![Demo animation](../assets/julia-cell-demo.gif?raw=true)
 
 
 Requirements
 ------------
 
-ipython-cell requires Vim or Neovim to be compiled with Python 2 or Python 3
+julia-cell requires Vim or Neovim to be compiled with Python 2 or Python 3
 support (`+python` or `+python3` when running `vim --version`). If both Python
 versions are found, the plugin will prefer Python 3.
 
-ipython-cell depends on [vim-slime] to send the code to Julia, see
+julia-cell depends on [vim-slime] to send the code to Julia, see
 [Installation](#installation) instructions below.
 
 Additionally, the cell execution feature requires Tkinter and a
@@ -43,7 +43,7 @@ require Tkinter or a clipboard program, see [Usage](#usage).
 Installation
 ------------
 
-It is easiest to install ipython-cell using a plugin manager (I personally
+It is easiest to install julia-cell using a plugin manager (I personally
 recommend [vim-plug]). See respective plugin manager's documentation for more
 information about how to install plugins.
 
@@ -52,7 +52,7 @@ information about how to install plugins.
 
 ~~~vim
 Plug 'jpalardy/vim-slime', { 'for': 'python' }
-Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
+Plug 'hanschen/vim-julia-cell', { 'for': 'python' }
 ~~~
 
 
@@ -60,7 +60,7 @@ Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 
 ~~~vim
 Plugin 'jpalardy/vim-slime'
-Plugin 'hanschen/vim-ipython-cell'
+Plugin 'hanschen/vim-julia-cell'
 ~~~
 
 
@@ -68,7 +68,7 @@ Plugin 'hanschen/vim-ipython-cell'
 
 ~~~vim
 NeoBundle 'jpalardy/vim-slime', { 'on_ft': 'python' }
-NeoBundle 'hanschen/vim-ipython-cell', { 'on_ft': 'python' }
+NeoBundle 'hanschen/vim-julia-cell', { 'on_ft': 'python' }
 ~~~
 
 
@@ -76,7 +76,7 @@ NeoBundle 'hanschen/vim-ipython-cell', { 'on_ft': 'python' }
 
 ~~~vim
 call dein#add('jpalardy/vim-slime', { 'on_ft': 'python' })
-call dein#add('hanschen/vim-ipython-cell', { 'on_ft': 'python' })
+call dein#add('hanschen/vim-julia-cell', { 'on_ft': 'python' })
 ~~~
 
 
@@ -84,7 +84,7 @@ call dein#add('hanschen/vim-ipython-cell', { 'on_ft': 'python' })
 
 ~~~sh
 cd ~/.vim/bundle
-git clone https://github.com/hanschen/vim-ipython-cell.git
+git clone https://github.com/hanschen/vim-julia-cell.git
 ~~~
 
 [vim-plug]: https://github.com/junegunn/vim-plug
@@ -97,16 +97,16 @@ git clone https://github.com/hanschen/vim-ipython-cell.git
 Usage
 -----
 
-ipython-cell sends code from Vim to Julia using [vim-slime]. For this to
+julia-cell sends code from Vim to Julia using [vim-slime]. For this to
 work, Julia has to be running in a terminal multiplexer like GNU Screen or
 tmux, or in a Vim or Neovim terminal. I personally use tmux, but you will find
 `screen` installed on most *nix systems.
 
 It is recommended that you familiarize yourself with [vim-slime] first before
-using ipython-cell. Once you understand vim-slime, using ipython-cell will be a
+using julia-cell. Once you understand vim-slime, using julia-cell will be a
 breeze.
 
-ipython-cell does not define any key mappings by default, but comes with the
+julia-cell does not define any key mappings by default, but comes with the
 commands listed below, which I recommend that you bind to key combinations of
 your likings. The [Example Vim Configuration](#example-vim-configuration) shows
 some examples of how this can be done.
@@ -302,7 +302,7 @@ it to suit your needs.
 " Load plugins using vim-plug
 call plug#begin('~/.vim/plugged')
 Plug 'jpalardy/vim-slime', { 'for': 'python' }
-Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
+Plug 'hanschen/vim-julia-cell', { 'for': 'python' }
 call plug#end()
 
 "------------------------------------------------------------------------------
@@ -321,7 +321,7 @@ let g:slime_default_config = {
 let g:slime_dont_ask_default = 1
 
 "------------------------------------------------------------------------------
-" ipython-cell configuration
+" julia-cell configuration
 "------------------------------------------------------------------------------
 " Use '##' to define cells instead of using marks
 let g:julia_cell_delimit_cells_by = 'tags'
@@ -393,7 +393,7 @@ inoremap <F7> <C-o>:JuliaCellExecuteCellJump<CR>
 Supported clipboard programs
 ----------------------------
 
-Some features of ipython-cell use one of the following clipboard programs:
+Some features of julia-cell use one of the following clipboard programs:
 
 * Linux: [xclip] (preferred) or [xsel].
 * macOS: pbcopy (installed by default).
@@ -454,7 +454,7 @@ for more information, in particular the documentation about
 
 > Why do I get "name 'plt' is not defined" when I try to close figures?
 
-ipython-cell assumes that you have imported `matplotlib.pyplot` as `plt` in
+julia-cell assumes that you have imported `matplotlib.pyplot` as `plt` in
 Julia. If you prefer to import `matplotlib.pyplot` differently, you can
 achieve the same thing using vim-slime, for example by adding the following to
 your .vimrc:
@@ -492,9 +492,9 @@ version, I would be happy to consider to merge it.
 Related plugins
 ---------------
 
-* [tslime\_ipython] - Similar to ipython-cell but with some small differences.
+* [tslime\_ipython] - Similar to julia-cell but with some small differences.
   For example, tslime\_ipython pastes the whole code that's sent to Julia
-  to the input line, while ipython-cell uses Julia's `%paste -q` command to
+  to the input line, while julia-cell uses Julia's `%paste -q` command to
   make the execution less verbose.
 * [vim-ipython] - Advanced two-way integration between Vim and Julia. I never
   got it to work as I want, i.e., don't show the code that's executed but show
@@ -511,7 +511,7 @@ Related plugins
 Thanks
 ------
 
-ipython-cell was heavily inspired by [tslime\_ipython].
+julia-cell was heavily inspired by [tslime\_ipython].
 The code logic to determine which Python version to use was taken from
 [YouCompleteMe].
 

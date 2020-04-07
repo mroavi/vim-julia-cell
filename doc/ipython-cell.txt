@@ -1,15 +1,15 @@
-*ipython-cell.txt*  run code cells in Julia
-*ipython-cell*
+*julia-cell.txt*  run code cells in Julia
+*julia-cell*
 
 This plugin allows you to easily run Python code from Vim in Julia,
 including individual code cells similar to Jupyter notebooks and MATLAB.
 
 ==============================================================================
-USAGE                                                     *ipython-cell-usage*
+USAGE                                                     *julia-cell-usage*
 
-Before using ipython-cell, familiarize yourself with the |slime| plugin.
+Before using julia-cell, familiarize yourself with the |slime| plugin.
 
-ipython-cell does not add any custom mappings. Instead, it is up to the user
+julia-cell does not add any custom mappings. Instead, it is up to the user
 to define custom mappings for the commands below. For example, you can add the
 following to your .vimrc: >
 
@@ -40,14 +40,14 @@ start of code cells by adding the following to your vimrc: >
 
     let g:julia_cell_delimit_cells_by = 'tags'
 
-In that case, ipython-cell will by default interpret any lines containing `##`
+In that case, julia-cell will by default interpret any lines containing `##`
 as cell headers.
 
 Note that the cell execution feature copies your code to the system clipboard.
 You may want to avoid using this feature if your code contains sensitive data.
 
 ==============================================================================
-COMMANDS                                               *ipython-cell-commands*
+COMMANDS                                               *julia-cell-commands*
 
                                                              *:JuliaCellRun*
 :JuliaCellRun                     Run whole script in Julia.
@@ -93,7 +93,7 @@ COMMANDS                                               *ipython-cell-commands*
                                     Restart Julia.
 
 ==============================================================================
-CONFIGURATION                                     *ipython-cell-configuration*
+CONFIGURATION                                     *julia-cell-configuration*
 
 The following configuration options allow you to specify how cells are
 defined.
@@ -103,12 +103,12 @@ g:julia_cell_delimit_cells_by     Delimit cells by Vim marks (`'marks'`,
                                     default) or a special tag in the code
                                     (`'tags'`).
 
-                                                    *ipython-cell-valid-marks*
+                                                    *julia-cell-valid-marks*
 g:julia_cell_valid_marks          Which marks to use to mark the boundary
                                     between cells.
                                     Default: `'abcdefghijklmnopqrstuvqxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'`
 
-                                                            *ipython-cell-tag*
+                                                            *julia-cell-tag*
 g:julia_cell_tag                  What kind of comment tag to use to mark
                                     the boundary between cells
                                     (default `'##'`). This option is used only
@@ -116,7 +116,7 @@ g:julia_cell_tag                  What kind of comment tag to use to mark
                                     set to  `'tags'`.
 
 ==============================================================================
-FAQ                                                         *ipython-cell-faq*
+FAQ                                                         *julia-cell-faq*
 
 Q: The 'JuliaCellExecuteCell' and 'JuliaCellExecuteCellJump' commands ~
 do not work, but other commands such as JuliaCellRun work. Why? ~
@@ -156,7 +156,7 @@ down Ctrl and tap the C key twice) will send the current paragraph or the
 selected lines to Julia. See |slime| for more information.
 
 Q: Why do I get "name 'plt' is not defined" when I try to close figures? ~
-A: ipython-cell assumes that you have imported `matplotlib.pyplot` as `plt` in
+A: julia-cell assumes that you have imported `matplotlib.pyplot` as `plt` in
 Julia. If you prefer to import `matplotlib.pyplot` differently, you can
 achieve the same thing using vim-slime, for example by adding the following to
 your .vimrc: >
@@ -182,12 +182,12 @@ to learn Vimscript for this plugin. If someone implements a pure Vimscript
 version, I would be happy to consider to merge it.
 
 ==============================================================================
-ABOUT                                                     *ipython-cell-about*
+ABOUT                                                     *julia-cell-about*
 
 Author: Hans Chen (contact@hanschen.org)
 
 The latest versions can be found at
-    http://github.com/hanschen/vim-ipython-cell
+    http://github.com/hanschen/vim-julia-cell
 
 This plugin was originally inspired by
     https://github.com/eldridgejm/tslime_ipython
