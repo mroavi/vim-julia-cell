@@ -12,7 +12,7 @@ Installation
 julia-cell requires Vim or Neovim to be compiled with Python 2 or Python 3
 support (`+python` or `+python3` when running `vim --version`).
 
-julia-cell depends on [vim-slime](https://github.com/jpalardy/vim-slime).
+julia-cell depends on [vim-slime](https://github.com/jpalardy/vim-slime). See the installation instructions [here](https://github.com/jpalardy/vim-slime#installation).
 
 Additionally, the cell execution feature requires a
 [clipboard program](#supported-clipboard-programs) to be installed.
