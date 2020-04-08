@@ -58,10 +58,9 @@ def restart_ipython():
     _slimesend("\x10")
 
 
-def run(*args):
-    """Run script."""
-    opts = " ".join(args)
-    _slimesend("%run {} {}".format(opts, vim.current.buffer.name))
+def run():
+    """Run the current file."""
+    _slimesend("include({})".format("\"" + vim.current.buffer.name + "\""))
 
 
 def clear():
