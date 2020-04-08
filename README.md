@@ -91,7 +91,7 @@ let g:slime_dont_ask_default = 1
 "------------------------------------------------------------------------------
 " julia-cell configuration
 "------------------------------------------------------------------------------
-" Use '##' to define cells instead of using marks
+" Use '##' tags to define cells
 let g:julia_cell_delimit_cells_by = 'tags'
 
 " Keyboard mappings. <Leader> is \ (backslash) by default
