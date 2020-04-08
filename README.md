@@ -143,10 +143,6 @@ program.
 
 Run the whole script in Julia.
 
-    :JuliaCellRunTime
-
-Run the whole script in Julia and time the execution.
-
     :JuliaCellClear
 
 Clear Julia screen.
@@ -330,9 +326,6 @@ let g:julia_cell_delimit_cells_by = 'tags'
 
 " map <Leader>r to run script
 nnoremap <Leader>r :JuliaCellRun<CR>
-
-" map <Leader>R to run script and time the execution
-nnoremap <Leader>R :JuliaCellRunTime<CR>
 
 " map <Leader>c to execute the current cell
 nnoremap <Leader>c :JuliaCellExecuteCell<CR>

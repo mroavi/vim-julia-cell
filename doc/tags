@@ -9,7 +9,6 @@
 :JuliaCellPrevCommand	julia-cell.txt	/*:JuliaCellPrevCommand*
 :JuliaCellRestart	julia-cell.txt	/*:JuliaCellRestart*
 :JuliaCellRun	julia-cell.txt	/*:JuliaCellRun*
-:JuliaCellRunTime	julia-cell.txt	/*:JuliaCellRunTime*
 julia-cell	julia-cell.txt	/*julia-cell*
 julia-cell-about	julia-cell.txt	/*julia-cell-about*
 julia-cell-commands	julia-cell.txt	/*julia-cell-commands*

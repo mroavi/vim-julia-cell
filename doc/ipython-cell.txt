@@ -14,7 +14,6 @@ to define custom mappings for the commands below. For example, you can add the
 following to your .vimrc: >
 
     nmap <Leader>r :JuliaCellRun<CR>
-    nmap <Leader>R :JuliaCellRunTime<CR>
     nmap <Leader>c :JuliaCellExecuteCell<CR>
     nmap <Leader>C :JuliaCellExecuteCellJump<CR>
     nmap <Leader>l :JuliaCellClear<CR>
@@ -51,10 +50,6 @@ COMMANDS                                               *julia-cell-commands*
 
                                                              *:JuliaCellRun*
 :JuliaCellRun                     Run whole script in Julia.
-
-                                                         *:JuliaCellRunTime*
-:JuliaCellRunTime                 Run whole script in Julia and time the
-                                    execution.
 
                                                      *:JuliaCellExecuteCell*
 :JuliaCellExecuteCell             Execute a single code cell in Julia.
