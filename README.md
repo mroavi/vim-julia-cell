@@ -36,7 +36,7 @@ Plugin 'mroavi/vim-julia-cell'
 Usage
 -----
 
-julia-cell sends code from Vim to a Julia REPL using [vim-slime]. This means that Julia has to be running in a terminal multiplexer like GNU Screen or tmux, or in a Vim or Neovim terminal.
+julia-cell sends code from Vim to a Julia REPL using [vim-slime](https://github.com/jpalardy/vim-slime). This means that Julia has to be running in a terminal multiplexer like GNU Screen or tmux, or in a Vim or Neovim terminal.
 
 Code cells are defined by either Vim marks or special tags in the code, depending on the value of `g:julia_cell_delimit_cells_by`. 
 
