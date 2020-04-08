@@ -130,5 +130,5 @@ nnoremap <F5> :w<CR>:JuliaCellRun<CR>
 Credits
 ------
 
-julia-cell is and adaptation of [hanschen/vim-ipython-cell](https://github.com/hanschen/vim-ipython-cell).
-
+- julia-cell is and adaptation of [hanschen/vim-ipython-cell](https://github.com/hanschen/vim-ipython-cell).
+- @FirstnameLastname came up with the idea of julia-cell and an initial implementation.
