@@ -3,9 +3,6 @@ julia-cell
 
 Cell support for Julia in Vim.
 
-Demo
-----
-
 ![Demo animation](../assets/vim-julia-cell-demo.gif?raw=true)
 
 
