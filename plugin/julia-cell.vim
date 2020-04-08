@@ -44,10 +44,6 @@ function! JuliaCellClear()
     exec s:python_command "julia_cell.clear()"
 endfunction
 
-function! JuliaCellClose()
-    exec s:python_command "julia_cell.close_all()"
-endfunction
-
 function! JuliaCellExecuteCell(...)
     let arg1 = get(a:, 1, 0)
     let arg2 = get(a:, 2, 0)
@@ -65,26 +61,13 @@ function! JuliaCellPrevCell()
     exec s:python_command "julia_cell.jump_prev_cell()"
 endfunction
 
-function! JuliaCellPrevCommand()
-    exec s:python_command "julia_cell.previous_command()"
-endfunction
-
-function! JuliaCellRestart()
-    exec s:python_command "julia_cell.restart_ipython()"
-endfunction
-
 function! JuliaCellRun()
     exec s:python_command "julia_cell.run()"
 endfunction
 
 command! -nargs=0 JuliaCellClear call JuliaCellClear()
-command! -nargs=0 JuliaCellClose call JuliaCellClose()
 command! -nargs=0 JuliaCellExecuteCell call JuliaCellExecuteCell()
 command! -nargs=0 JuliaCellExecuteCellJump call JuliaCellExecuteCell(1, 1)
-command! -nargs=0 JuliaCellExecuteCellVerbose call JuliaCellExecuteCell(1)
-command! -nargs=0 JuliaCellExecuteCellVerboseJump call JuliaCellExecuteCell(1, 1)
 command! -nargs=0 JuliaCellNextCell call JuliaCellNextCell()
 command! -nargs=0 JuliaCellPrevCell call JuliaCellPrevCell()
-command! -nargs=0 JuliaCellPrevCommand call JuliaCellPrevCommand()
-command! -nargs=0 JuliaCellRestart call JuliaCellRestart()
 command! -nargs=0 JuliaCellRun call JuliaCellRun()

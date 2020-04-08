@@ -1,13 +1,8 @@
 :JuliaCellClear	julia-cell.txt	/*:JuliaCellClear*
-:JuliaCellClose	julia-cell.txt	/*:JuliaCellClose*
 :JuliaCellExecuteCell	julia-cell.txt	/*:JuliaCellExecuteCell*
 :JuliaCellExecuteCellJump	julia-cell.txt	/*:JuliaCellExecuteCellJump*
-:JuliaCellExecuteCellVerbose	julia-cell.txt	/*:JuliaCellExecuteCellVerbose*
-:JuliaCellExecuteCellVerboseJump	julia-cell.txt	/*:JuliaCellExecuteCellVerboseJump*
 :JuliaCellNextCell	julia-cell.txt	/*:JuliaCellNextCell*
 :JuliaCellPrevCell	julia-cell.txt	/*:JuliaCellPrevCell*
-:JuliaCellPrevCommand	julia-cell.txt	/*:JuliaCellPrevCommand*
-:JuliaCellRestart	julia-cell.txt	/*:JuliaCellRestart*
 :JuliaCellRun	julia-cell.txt	/*:JuliaCellRun*
 julia-cell	julia-cell.txt	/*julia-cell*
 julia-cell-about	julia-cell.txt	/*julia-cell-about*

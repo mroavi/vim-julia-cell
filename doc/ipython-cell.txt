@@ -58,34 +58,14 @@ COMMANDS                                               *julia-cell-commands*
 :JuliaCellExecuteCellJump         Execute a single code cell in Julia, and
                                     move cursor to the next cell.
 
-                                              *:JuliaCellExecuteCellVerbose*
-:JuliaCellExecuteCellVerbose      Print and execute a single code cell in
-                                    Julia.
-
-                                          *:JuliaCellExecuteCellVerboseJump*
-:JuliaCellExecuteCellVerboseJump  Print and execute a single code cell in
-                                    Julia, and move cursor to the next cell.
-
                                                            *:JuliaCellClear*
 :JuliaCellClear                   Clear Julia screen.
-
-                                                           *:JuliaCellClose*
-:JuliaCellClose                   Close all Matplotlib figure windows. This
-                                    command assumes that the
-                                    `matplotlib.pyplot` module is imported as
-                                    `plt` in Julia.
 
 :JuliaCellPrevCell                                    *:JuliaCellPrevCell*
                                     Jump to the previous cell header.
 
 :JuliaCellNextCell                                    *:JuliaCellNextCell*
                                     Jump to the next cell header.
-
-:JuliaCellPrevCommand                              *:JuliaCellPrevCommand*
-                                    Run previous command.
-
-:JuliaCellRestart                                      *:JuliaCellRestart*
-                                    Restart Julia.
 
 ==============================================================================
 CONFIGURATION                                     *julia-cell-configuration*
@@ -118,9 +98,6 @@ do not work, but other commands such as JuliaCellRun work. Why? ~
 A: First, make sure you have Tkinter installed (otherwise you will get an
 error message) and a supported clipboard program, see README.
 Also make sure your `DISPLAY` variable is correct, see next question.
-If you cannot install the requirements but still want to use the cell execution
-feature, you can try the verbose versions 'JuliaCellExecuteCellVerbose' and
-'JuliaCellExecuteCellVerboseJump'.
 
 Q: 'JuliaCellExecuteCell' and 'JuliaCellExecuteCellJump' do not execute ~
 the correct code cell, or I get an error about 'can't open display', ~

@@ -47,17 +47,6 @@ def jump_prev_cell():
         vim.current.window.cursor = (prev_cell_row, 0)
 
 
-def previous_command():
-    """Run previous command."""
-    _slimesend("\x10")
-
-
-def restart_ipython():
-    """Quit ipython and start it again."""
-    _slimesend("exit")
-    _slimesend("\x10")
-
-
 def run():
     """Run the current file."""
     _slimesend("include({})".format("\"" + vim.current.buffer.name + "\""))
@@ -66,11 +55,6 @@ def run():
 def clear():
     """Clear REPL."""
     _slimesend("\x0C")
-
-
-def close_all():
-    """Close all figure windows."""
-    _slimesend("plt.close('all')")
 
 
 def _copy_to_clipboard(string, prefer_program=None):

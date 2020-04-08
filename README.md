@@ -127,18 +127,6 @@ Requires a [clipboard program](#supported-clipboard-programs)
 Execute the current code cell in Julia, and jump to the next cell.
 Requires a [clipboard program](#supported-clipboard-programs)
 
-    :JuliaCellExecuteCellVerbose
-
-Print and execute the current code cell in Julia.
-Verbose version of `JuliaCellExecuteCell` that works without a clipboard
-program.
-
-    :JuliaCellExecuteCellVerboseJump
-
-Print and execute the current code cell in Julia, and jump to the next cell.
-Verbose version of `JuliaCellExecuteCellJump` that works without a clipboard
-program.
-
     :JuliaCellRun
 
 Run the whole script in Julia.
@@ -147,10 +135,6 @@ Run the whole script in Julia.
 
 Clear Julia screen.
 
-    :JuliaCellClose
-
-Close all figure windows.
-
     :JuliaCellPrevCell
 
 Jump to the previous cell header.
@@ -158,14 +142,6 @@ Jump to the previous cell header.
     :JuliaCellNextCell
 
 Jump to the next cell header.
-
-    :JuliaCellPrevCommand
-
-Run previous command.
-
-    :JuliaCellRestart
-
-Restart Julia.
 
 [vim-slime]: https://github.com/jpalardy/vim-slime
 
@@ -405,9 +381,6 @@ FAQ
 First, make sure you have Tkinter installed (otherwise you will get an error
 message) and a supported [clipboard program](#supported-clipboard-programs).
 Also make sure your `DISPLAY` variable is correct, see next question.
-If you cannot install the requirements but still want to use the cell execution
-feature, you can try the verbose versions `JuliaCellExecuteCellVerbose` and
-`JuliaCellExecuteCellVerboseJump`.
 
 > `JuliaCellExecuteCell` and `JuliaCellExecuteCellJump` do not execute the
 > correct code cell, or I get an error about
