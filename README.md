@@ -6,7 +6,7 @@ Cell support for Julia in Vim.
 Demo
 ----
 
-![Demo animation](../assets/julia-cell-demo.gif?raw=true)
+![Demo animation](../assets/vim-julia-cell-demo.gif?raw=true)
 
 
 Installation
