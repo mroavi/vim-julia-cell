@@ -59,7 +59,6 @@ Note that the cell execution feature copies your code to the system clipboard, w
 | `:JuliaCellPrevCell` | Jump to the previous cell header. |
 | `:JuliaCellNextCell` | Jump to the next cell header. |
 
-### Defining code cells
 
 Configuration
 -------------
@@ -67,13 +66,13 @@ Configuration
 | Option| Description | Default |
 | --- | ---| --- |
 | `g:julia_cell_delimit_cells_by`| Specifies if cells are delimited by `'marks'` or `'tags'`. | `'marks'` |
-| `g:julia_cell_tag`  | If cells are delimited by tags, specify the format of the tags. | `'##'` |
+| `g:julia_cell_tag`  | Specifies the tag format. | `'##'` |
 
 
 Example Vim configuration
 -------------------------
 
-This is an example of how to configure julia-cell in your `.vimrc`.
+Example of how to configure julia-cell in your `.vimrc`.
 
 ~~~vim
 " Load plugins using vim-plug
@@ -85,16 +84,8 @@ call plug#end()
 "------------------------------------------------------------------------------
 " slime configuration 
 "------------------------------------------------------------------------------
-" use tmux
 let g:slime_target = 'tmux'
-
-" fix paste issues in ipython
-let g:slime_python_ipython = 1
-
-" always send text to the top-right pane in the current tmux tab without asking
-let g:slime_default_config = {
-            \ 'socket_name': get(split($TMUX, ','), 0),
-            \ 'target_pane': '{top-right}' }
+let g:slime_default_config = {"socket_name": "default", "target_pane": "{right-of}"}
 let g:slime_dont_ask_default = 1
 
 "------------------------------------------------------------------------------
