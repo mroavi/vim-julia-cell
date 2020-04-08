@@ -73,8 +73,8 @@ function! JuliaCellRestart()
     exec s:python_command "julia_cell.restart_ipython()"
 endfunction
 
-function! JuliaCellRun(...)
-    exec s:python_command "julia_cell.run('" . join(a:000, ',') . "')"
+function! JuliaCellRun()
+    exec s:python_command "julia_cell.run()"
 endfunction
 
 command! -nargs=0 JuliaCellClear call JuliaCellClear()
@@ -88,4 +88,3 @@ command! -nargs=0 JuliaCellPrevCell call JuliaCellPrevCell()
 command! -nargs=0 JuliaCellPrevCommand call JuliaCellPrevCommand()
 command! -nargs=0 JuliaCellRestart call JuliaCellRestart()
 command! -nargs=0 JuliaCellRun call JuliaCellRun()
-command! -nargs=0 JuliaCellRunTime call JuliaCellRun('-t')
