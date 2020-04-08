@@ -15,8 +15,7 @@ support (`+python` or `+python3` when running `vim --version`).
 julia-cell depends on [vim-slime](https://github.com/jpalardy/vim-slime). See the installation instructions [here](https://github.com/jpalardy/vim-slime#installation).
 
 Additionally, the cell execution feature requires a
-[clipboard program](#supported-clipboard-programs) to be installed.
-The plugin supports [xclip](https://github.com/astrand/xclip) and [xsel](https://github.com/kfish/xsel) on Linux and pbcopy on macOS. Windows is not supported.
+[clipboard program](#supported-clipboard-programs) to be installed. [xclip](https://github.com/astrand/xclip) and [xsel](https://github.com/kfish/xsel) are supported on Linux, and pbcopy on macOS. Windows is not supported.
 
 ### Using [vim-plug](https://github.com/junegunn/vim-plug)
 
