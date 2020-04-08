@@ -64,8 +64,8 @@ def run():
 
 
 def clear():
-    """Clear screen."""
-    _slimesend("%clear")
+    """Clear REPL."""
+    _slimesend("\x0C")
 
 
 def close_all():
