@@ -128,4 +128,5 @@ Credits
 ------
 
 - julia-cell is and adaptation of [hanschen/vim-ipython-cell](https://github.com/hanschen/vim-ipython-cell).
+- This plugin uses [vim-slime](https://github.com/jpalardy/vim-slime) under the hood to communicate with the multiplexer. 
 - @FirstnameLastname came up with the idea of julia-cell and an initial implementation.
