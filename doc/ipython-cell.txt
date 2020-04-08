@@ -46,44 +46,44 @@ Note that the cell execution feature copies your code to the system clipboard.
 You may want to avoid using this feature if your code contains sensitive data.
 
 ==============================================================================
-COMMANDS                                               *julia-cell-commands*
+COMMANDS                                                 *julia-cell-commands*
 
-                                                             *:JuliaCellRun*
-:JuliaCellRun                     Run whole script in Julia.
+                                                               *:JuliaCellRun*
+:JuliaCellRun                       Run whole script in Julia.
 
-                                                     *:JuliaCellExecuteCell*
-:JuliaCellExecuteCell             Execute a single code cell in Julia.
+                                                       *:JuliaCellExecuteCell*
+:JuliaCellExecuteCell               Execute a single code cell in Julia.
 
-                                                 *:JuliaCellExecuteCellJump*
-:JuliaCellExecuteCellJump         Execute a single code cell in Julia, and
-                                    move cursor to the next cell.
+                                                   *:JuliaCellExecuteCellJump*
+:JuliaCellExecuteCellJump           Execute a single code cell in Julia, and
+                                                 move cursor to the next cell.
 
-                                                           *:JuliaCellClear*
-:JuliaCellClear                   Clear Julia screen.
+                                                             *:JuliaCellClear*
+:JuliaCellClear                     Clear Julia screen.
 
-:JuliaCellPrevCell                                    *:JuliaCellPrevCell*
+:JuliaCellPrevCell                                        *:JuliaCellPrevCell*
                                     Jump to the previous cell header.
 
 :JuliaCellNextCell                                    *:JuliaCellNextCell*
                                     Jump to the next cell header.
 
 ==============================================================================
-CONFIGURATION                                     *julia-cell-configuration*
+CONFIGURATION                                       *julia-cell-configuration*
 
 The following configuration options allow you to specify how cells are
 defined.
 
-                                               *julia_cell_delimit_cells_by*
+                                                 *julia_cell_delimit_cells_by*
 g:julia_cell_delimit_cells_by     Delimit cells by Vim marks (`'marks'`,
                                     default) or a special tag in the code
                                     (`'tags'`).
 
-                                                    *julia-cell-valid-marks*
+                                                      *julia-cell-valid-marks*
 g:julia_cell_valid_marks          Which marks to use to mark the boundary
                                     between cells.
                                     Default: `'abcdefghijklmnopqrstuvqxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'`
 
-                                                            *julia-cell-tag*
+                                                              *julia-cell-tag*
 g:julia_cell_tag                  What kind of comment tag to use to mark
                                     the boundary between cells
                                     (default `'##'`). This option is used only
@@ -91,7 +91,7 @@ g:julia_cell_tag                  What kind of comment tag to use to mark
                                     set to  `'tags'`.
 
 ==============================================================================
-FAQ                                                         *julia-cell-faq*
+FAQ                                                           *julia-cell-faq*
 
 Q: The 'JuliaCellExecuteCell' and 'JuliaCellExecuteCellJump' commands ~
 do not work, but other commands such as JuliaCellRun work. Why? ~
@@ -154,7 +154,7 @@ to learn Vimscript for this plugin. If someone implements a pure Vimscript
 version, I would be happy to consider to merge it.
 
 ==============================================================================
-ABOUT                                                     *julia-cell-about*
+ABOUT                                                       *julia-cell-about*
 
 Author: Hans Chen (contact@hanschen.org)
 

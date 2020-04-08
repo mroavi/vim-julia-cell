@@ -1,7 +1,5 @@
 " File:         julia-cell.vim
 " Description:  Execute Julia code cells in a REPL inside a tmux pane directly from Vim.
-" Author:       Hans Chen <contact@hanschen.org>
-" Author:       Martin Roa Villescas
 
 if exists('g:loaded_julia_cell')
     finish
