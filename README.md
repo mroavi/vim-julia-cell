@@ -9,8 +9,7 @@ Cell support for Julia in Vim.
 Installation
 ------------
 
-julia-cell requires Vim or Neovim to be compiled with Python 2 or Python 3
-support (`+python` or `+python3` when running `vim --version`).
+This plugin requires Vim or Neovim to be compiled with Python 2 or 3 support (`+python` or `+python3` when running `vim --version`).
 
 julia-cell depends on [vim-slime](https://github.com/jpalardy/vim-slime). See the installation instructions [here](https://github.com/jpalardy/vim-slime#installation).
 
@@ -48,7 +47,7 @@ Note that the cell execution feature copies your code to the system clipboard, w
 
 ### Commands
 
-| Command | List |
+| Command | Description |
 | --- | --- |
 | `:JuliaCellExecuteCell` | Execute the current code cell. |
 | `:JuliaCellExecuteCellJump` | Execute the current code cell and jump to the next cell. |
@@ -92,8 +91,6 @@ let g:slime_dont_ask_default = 1
 " Use '##' tags to define cells
 let g:julia_cell_delimit_cells_by = 'tags'
 
-" Keyboard mappings. <Leader> is \ (backslash) by default
-
 " map <Leader>jr to run entire file
 nnoremap <Leader>jr :JuliaCellRun<CR>
 
@@ -130,4 +127,4 @@ Credits
 
 - julia-cell is and adaptation of [hanschen/vim-ipython-cell](https://github.com/hanschen/vim-ipython-cell).
 - This plugin uses [vim-slime](https://github.com/jpalardy/vim-slime) under the hood to communicate with the multiplexer. 
-- @FirstnameLastname came up with the idea of julia-cell and an initial implementation.
+- @FirstnameLastname came up with an initial implementation.
