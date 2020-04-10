@@ -13,7 +13,7 @@ This plugin requires Vim/Neovim with Python 2 or Python 3 support (`+python` or 
 
 julia-cell depends on [vim-slime](https://github.com/jpalardy/vim-slime). See the installation instructions [here](https://github.com/jpalardy/vim-slime#installation).
 
-Additionally, the cell execution feature requires a clipboard program to be installed. [xclip](https://github.com/astrand/xclip) and [xsel](https://github.com/kfish/xsel) are supported on Linux, and pbcopy on macOS. Windows is not supported.
+The cell execution feature requires a clipboard program to be installed. [xclip](https://github.com/astrand/xclip) and [xsel](https://github.com/kfish/xsel) are supported on Linux, and pbcopy on macOS. Windows is not supported.
 
 If [vim-highlightedyank](https://github.com/machakann/vim-highlightedyank) is installed, code sent to the REPL is highlighted.
 
