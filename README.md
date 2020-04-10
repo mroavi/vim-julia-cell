@@ -9,7 +9,7 @@ Cell support for Julia in Vim.
 Installation
 ------------
 
-This plugin requires Vim or Neovim to be compiled with Python 2 or 3 support (`+python` or `+python3` when running `vim --version`).
+This plugin requires Vim or Neovim with Python 2 or Python 3 support (`+python` or `+python3` when running `vim --version`).
 
 julia-cell depends on [vim-slime](https://github.com/jpalardy/vim-slime). See the installation instructions [here](https://github.com/jpalardy/vim-slime#installation).
 
