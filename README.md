@@ -70,8 +70,7 @@ Note that the cell execution feature copies your code to the system clipboard, w
 | `g:julia_cell_tag`  | Specifies the tag format. | `'##'` |
 
 
-Example Vim configuration
--------------------------
+### Example Vim configuration
 
 Example of how to configure julia-cell in your `.vimrc`.
 
