@@ -1,7 +1,7 @@
 *julia-cell.txt*  run code cells in Julia
 *julia-cell*
 
-This plugin allows you to easily run Python code from Vim in Julia,
+This plugin allows you to easily run Julia code from Vim,
 including individual code cells similar to Jupyter notebooks and MATLAB.
 
 ==============================================================================
@@ -13,25 +13,25 @@ julia-cell does not add any custom mappings. Instead, it is up to the user
 to define custom mappings for the commands below. For example, you can add the
 following to your .vimrc: >
 
-    nmap <Leader>r :JuliaCellRun<CR>
-    nmap <Leader>c :JuliaCellExecuteCell<CR>
-    nmap <Leader>C :JuliaCellExecuteCellJump<CR>
-    nmap <Leader>l :JuliaCellClear<CR>
-    nmap <Leader>x :JuliaCellClose<CR>
-    nmap <Leader>p :JuliaCellPrevCommand<CR>
-    nmap <Leader>q :JuliaCellRestart<CR>
+    " map <Leader>jr to run entire file
+    nnoremap <Leader>jr :JuliaCellRun<CR>
 
-`<Leader>` is `\` (backslash) by default. The mappings above map `\r` to run
-the current script in Julia, `\R` to run and time the script, `\c` to
-execute only the current code cell, `\C` to execute the current code cell and
-jump to the next cell, `\l` to clear the Julia screen, and `\x` to close all
-Matplotlib figure windows.
+    " map <Leader>jc to execute the current cell
+    nnoremap <Leader>jc :JuliaCellExecuteCell<CR>
 
-You may also want to add something like the following to easily navigate
-between code cells: >
+    " map <Leader>jC to execute the current cell and jump to the next cell
+    nnoremap <Leader>jC :JuliaCellExecuteCellJump<CR>
 
-    nmap [c :JuliaCellPrevCell<CR>
-    nmap ]c :JuliaCellNextCell<CR>
+    " map <Leader>jl to clear Julia screen
+    nnoremap <Leader>jl :JuliaCellClear<CR>
+
+    " map <Leader>jp and <Leader>jn to jump to the previous and next cell header
+    nnoremap <Leader>jp :JuliaCellPrevCell<CR>
+    nnoremap <Leader>jn :JuliaCellNextCell<CR>
+
+    " map <Leader>je to execute the current line or current selection
+    nmap <Leader>je <Plug>SlimeLineSend
+    xmap <Leader>je <Plug>SlimeRegionSend
 
 Code cells are by default defined by Vim marks (see |mark|). It is also
 possible to use special text in the code (referred to as tags) to mark the
@@ -127,39 +127,16 @@ A: Use the features provided by vim-slime. The default mapping `C-c C-c` (hold
 down Ctrl and tap the C key twice) will send the current paragraph or the
 selected lines to Julia. See |slime| for more information.
 
-Q: Why do I get "name 'plt' is not defined" when I try to close figures? ~
-A: julia-cell assumes that you have imported `matplotlib.pyplot` as `plt` in
-Julia. If you prefer to import `matplotlib.pyplot` differently, you can
-achieve the same thing using vim-slime, for example by adding the following to
-your .vimrc: >
-
-    nmap <Leader>x :SlimeSend1 matplotlib.pyplot.close('all')<CR>
-
 Q: How can I send other commands to Julia, e.g. '%who'? ~
 A: You can easily send arbitary commands to Julia using the `:SlimeSend1`
 command provided by vim-slime, e.g. `:SlimeSend1 %who`, and map these commands
 to key combinations.
 
-Q: Why isn't this plugin specific to Python by default? In other words, why ~
-do I have to add all this extra stuff to make this plugin Python-specific? ~
-A: This plugin was created with Python and Julia in mind, but I don't want
-to restrict the plugin to Python by design. Instead, I have included examples
-of how to use plugin managers to specify that the plugin should be loaded only
-for Python files and how to create Python-specific mappings. If someone wants
-to use this plugin for other filetypes, they can easily do so.
-
-Q: Why is this plugin written in Python instead of pure Vimscript? ~
-A: Because I feel more comfortable with Python and don't have the motivation
-to learn Vimscript for this plugin. If someone implements a pure Vimscript
-version, I would be happy to consider to merge it.
-
 ==============================================================================
 ABOUT                                                       *julia-cell-about*
 
-Author: Hans Chen (contact@hanschen.org)
-
 The latest versions can be found at
-    http://github.com/hanschen/vim-julia-cell
+    http://github.com/mroavi/vim-julia-cell
 
 This plugin was originally inspired by
     https://github.com/eldridgejm/tslime_ipython
