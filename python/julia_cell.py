@@ -28,7 +28,7 @@ def execute_cell():
     _copy_to_clipboard(cell)
 
     _slimesend("include_string(Main, clipboard())")
-    
+
     vim.command("silent exe {} . ',' . {} . 'yank'".format(start_row, end_row))
 
 def jump_next_cell():
