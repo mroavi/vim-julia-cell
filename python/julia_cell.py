@@ -31,6 +31,7 @@ def execute_cell():
 
     vim.command("silent exe {} . ',' . {} . 'yank'".format(start_row, end_row))
 
+
 def jump_next_cell():
     """Move cursor to the start of the next cell."""
     current_row, _ = vim.current.window.cursor
@@ -56,7 +57,12 @@ def run():
 
 def clear():
     """Clear REPL."""
-    _slimesend("\x0C")
+    """Send ``string`` using SlimeSend0."""
+    try:
+        vim.command('SlimeSend0 nr2char(0x0C)')
+    except vim.error:
+        _error("SlimeSend0 command not found, make sure vim-slime is "
+               "installed")
 
 
 def _copy_to_clipboard(string, prefer_program=None):
