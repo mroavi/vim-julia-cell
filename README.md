@@ -68,7 +68,16 @@ Note that the cell execution feature copies your code to the system clipboard, w
 | --- | ---| --- |
 | `g:julia_cell_delimit_cells_by`| Specifies if cells are delimited by `'marks'` or `'tags'`. | `'marks'` |
 | `g:julia_cell_tag`  | Specifies the tag format. | `'##'` |
+| `g:julia_cell_cmd`  | Specifies the exact command. | `'include_string(Main, clipboard())'` |
 
+eg:  
+You can add
+```julia
+macro paste()
+	include_string(Main, read(pipeline(`xclip -quiet -out -selection`, stderr=stderr), String));
+end
+```
+into `~/.julia/config/startup.jl` and `let g:julia_cell_cmd='@paste'` to use X11 primary selection
 
 ### Example
 

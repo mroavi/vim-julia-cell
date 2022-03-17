@@ -22,6 +22,10 @@ function! s:UsingPython3()
     return 0
 endfunction
 
+if !exists(g:julia_cell_cmd)
+	let g:julia_cell_cmd="include_string(Main, clipboard())"
+endif
+
 let s:using_python3 = s:UsingPython3()
 let s:python_until_eof = s:using_python3 ? "python3 << EOF" : "python << EOF"
 let s:python_command = s:using_python3 ? "py3 " : "py "
