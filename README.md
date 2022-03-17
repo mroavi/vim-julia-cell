@@ -100,7 +100,7 @@ call plug#end()
 " slime configuration 
 "------------------------------------------------------------------------------
 let g:slime_target = 'tmux'
-let g:slime_default_config = {"socket_name": "default", "target_pane": "{right-of}"}
+let g:slime_default_config = {"socket_name": "default", "target_pane": "{bottom-right}"}
 let g:slime_dont_ask_default = 1
 
 "------------------------------------------------------------------------------
@@ -109,26 +109,27 @@ let g:slime_dont_ask_default = 1
 " Use '##' tags to define cells
 let g:julia_cell_delimit_cells_by = 'tags'
 
-" map <Leader>jr to run entire file
-nnoremap <Leader>jr :JuliaCellRun<CR>
+" add these mappings into ftplugin/julia.vim
 
-" map <Leader>jc to execute the current cell
-nnoremap <Leader>jc :JuliaCellExecuteCell<CR>
+" map <buffer> <Localleader>jr to run entire file
+nnoremap <buffer> <Localleader>jr :JuliaCellRun<CR>
 
-" map <Leader>jC to execute the current cell and jump to the next cell
-nnoremap <Leader>jC :JuliaCellExecuteCellJump<CR>
+" map <buffer> <Localleader>jc to execute the current cell
+nnoremap <buffer> <Localleader>jc :JuliaCellExecuteCell<CR>
 
-" map <Leader>jl to clear Julia screen
-nnoremap <Leader>jl :JuliaCellClear<CR>
+" map <buffer> <Localleader>jC to execute the current cell and jump to the next cell
+nnoremap <buffer> <Localleader>jC :JuliaCellExecuteCellJump<CR>
 
-" map <Leader>jp and <Leader>jn to jump to the previous and next cell header
-nnoremap <Leader>jp :JuliaCellPrevCell<CR>
-nnoremap <Leader>jn :JuliaCellNextCell<CR>
+" map <buffer> <Localleader>jl to clear Julia screen
+nnoremap <buffer> <Localleader>jl :JuliaCellClear<CR>
 
-" map <Leader>je to execute the current line or current selection
-nmap <Leader>je <Plug>SlimeLineSend
-xmap <Leader>je <Plug>SlimeRegionSend
+" map <buffer> <Localleader>jp and <Leader>jn to jump to the previous and next cell header
+nnoremap <buffer> <Localleader>jp :JuliaCellPrevCell<CR>
+nnoremap <buffer> <Localleader>jn :JuliaCellNextCell<CR>
 
+" map <buffer> <Localleader>je to execute the current line or current selection
+nmap <buffer> <Localleader>je <Plug>SlimeLineSend
+xmap <buffer> <Localleader>je <Plug>SlimeRegionSend
 ~~~
 
 In case you want to save before running the entire file:
