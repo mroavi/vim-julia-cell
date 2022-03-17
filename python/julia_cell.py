@@ -27,7 +27,7 @@ def execute_cell():
     cell = "\n".join(lines)
     _copy_to_clipboard(cell)
 
-    _slimesend("include_string(Main, clipboard())")
+    _slimesend(vim.vars["julia_cell_cmd"].decode("utf-8") )
 
     vim.command("silent exe {} . ',' . {} . 'yank'".format(start_row, end_row))
 
@@ -76,10 +76,16 @@ def _copy_to_clipboard(string, prefer_program=None):
         Which external program to use to copy to clipboard.
 
     """
-    PROGRAMS = [
-        ["xclip", "-i", "-selection", "clipboard"],
-        ["xsel", "-i", "--clipboard"],
-    ]
+    if vim.vars["julia_cell_use_primary_selection"]==0:
+        PROGRAMS = [
+            ["xclip", "-i", "-selection", "clipboard"],
+            ["xsel", "-i", "--clipboard"],
+        ]
+    else:
+        PROGRAMS = [
+            ["xclip", "-selection", "-in"],
+        ]
+
 
     # Python 2 compatibility
     try:
